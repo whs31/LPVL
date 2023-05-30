@@ -1,0 +1,13 @@
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+linux:
+  stage: build
+  tags: [linux]
+  script: cmake -GNinja -DCMAKE_BUILD_TYPE=Release && cmake --build .
+
+windows:
+  stage: build
+  tags: [windows]
+  script:
+     - mingw64-cmake -GNinja -DCMAKE_BUILD_TYPE=Release && cmake --build .

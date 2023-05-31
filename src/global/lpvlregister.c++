@@ -15,7 +15,7 @@
 #include "LPVL/LinePlot"
 #include "LPVL/RealtimeLinePlot"
 
-LPVL_DESCRIBE_SELF("220523dev");
+LPVL_DESCRIBE_SELF("0.1");
 
 void LPVL::register_lpvl()
 {

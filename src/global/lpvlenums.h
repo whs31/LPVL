@@ -4,11 +4,18 @@
 
 namespace LPVL
 {
-    enum class LPVL_EXPORT Intersection : unsigned char
+    enum class Intersection : unsigned char
     {
         In,
         Out,
         Inside,
-        NonIntersecting
+        None
+    };
+
+    enum class GeometryType : unsigned char
+    {
+        Flat,
+        Colored,
+        UV
     };
 } // LPVL

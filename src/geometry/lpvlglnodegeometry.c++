@@ -108,5 +108,11 @@ QSGGeometryNode *createGraphNode(const vector<float> &v, float dx, float dy, flo
 
     return ret;
 }
+
+QSGGeometry* createConvexCircle(const vector<vector<ConvexState> > &v, float w, float h)
+{
+
+}
+
 } // scenegraph
 } // LPVL

@@ -30,6 +30,7 @@ set(LPVL_CORE
     src/global/lpvlglobal.h
     src/global/lpvlregister.h src/global/lpvlregister.c++
     src/global/lpvlmath.h src/global/lpvlmath.c++
+    src/global/lpvlenums.h
 
     src/geometry/lpvlglvertex.h
     src/geometry/lpvlglnodegeometry.h src/geometry/lpvlglnodegeometry.c++
@@ -44,6 +45,7 @@ set(LPVL_CORE_INCLUDE
     include/LPVL/Global
     include/LPVL/Register
     include/LPVL/Math
+    include/LPVL/Enums
     include/LPVL/GLGeometry
     include/LPVL/MatrixPlot
     include/LPVL/LinePlot

@@ -32,6 +32,8 @@ set(LPVL_CORE
 
     src/geometry/lpvlglvertex.h
     src/geometry/lpvlglnodegeometry.h src/geometry/lpvlglnodegeometry.c++
+    src/geometry/lpvlpoint2d.h src/geometry/lpvlpoint2d.c++
+
     src/utils/lpvlcrypto.h src/utils/lpvlcrypto.c++
 
     src/quick/lpvlmatrixplot.h src/quick/lpvlmatrixplot.c++
@@ -45,6 +47,7 @@ set(LPVL_CORE_INCLUDE
     include/LPVL/Math
     include/LPVL/Enums
     include/LPVL/GLGeometry
+    include/LPVL/Point2D
     include/LPVL/MatrixPlot
     include/LPVL/LinePlot
     include/LPVL/RealtimeLinePlot

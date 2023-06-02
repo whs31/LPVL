@@ -14,7 +14,6 @@
 
 #include "LPVL/Global"
 #include "LPVL/Enums"
-#include "lpvlglvertex.h"
 #include <vector>
 
 using std::vector;
@@ -27,12 +26,6 @@ namespace LPVL
 {
     namespace scenegraph
     {
-        struct LPVL_EXPORT ConvexState
-        {
-            Intersection intersection;
-            float distance;
-        };
-
         LPVL_EXPORT QSGGeometry* createLineStripNode(const vector<float>& v, float dx, float dy, float w, float h, float line_width = 1);
         LPVL_EXPORT QSGGeometry* createSimpleGraphNode(const vector<float>& v, float dx, float dy, float w, float h);
 

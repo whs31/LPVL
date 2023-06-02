@@ -33,6 +33,9 @@ set(LPVL_CORE
     src/geometry/lpvlglnodegeometry.h src/geometry/lpvlglnodegeometry.c++
     src/geometry/lpvlpoint2d.h src/geometry/lpvlpoint2d.c++
     src/geometry/lpvlline2d.h src/geometry/lpvlline2d.c++
+    src/geometry/lpvltriangle.h src/geometry/lpvltriangle.c++
+    src/geometry/lpvlrectangle.h src/geometry/lpvlrectangle.c++
+    src/geometry/lpvlpolygon.h src/geometry/lpvlpolygon.c++
 
     src/utils/lpvlcrypto.h src/utils/lpvlcrypto.c++
 
@@ -49,6 +52,10 @@ set(LPVL_CORE_INCLUDE
     include/LPVL/GLGeometry
     include/LPVL/Point2D
     include/LPVL/Line2D
+    include/LPVL/Triangle
+    include/LPVL/Rectangle
+    include/LPVL/Polygon
+    include/LPVL/Shapes2D
     include/LPVL/MatrixPlot
     include/LPVL/LinePlot
     include/LPVL/RealtimeLinePlot

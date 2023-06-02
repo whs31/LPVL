@@ -1,0 +1,5 @@
+#include "geometry/lpvlpoint2d.h"
+#include "geometry/lpvlline2d.h"
+#include "geometry/lpvltriangle.h"
+#include "geometry/lpvlrectangle.h"
+#include "geometry/lpvlpolygon.h"

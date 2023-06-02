@@ -46,7 +46,7 @@ namespace LPVL
             friend bool operator==(const Point2D&, const Point2D&);
             friend bool operator!=(const Point2D&, const Point2D&);
             friend const Point2D operator+(const Point2D&, const Point2D&);
-            friend const Point2D operator-(const Point2D&, const Point2D&);
+            friend const Point2D operator-(const Point2D& p1, const Point2D& p2) { return Point2D(p1.x() - p2.x(), p1.y() - p2.y()); }
             friend const Point2D operator+(const Point2D&);
             friend const Point2D operator-(const Point2D&);
             friend const Point2D operator*(float, const Point2D&);

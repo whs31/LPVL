@@ -82,7 +82,7 @@ float Line2D::width() const noexcept { return m_2.x() - m_1.x(); }
 float Line2D::height() const noexcept { return m_2.y() - m_1.y(); }
 float Line2D::length() const noexcept
 {
-
+    // @TODO
 }
 
 void Line2D::setLength(float l)

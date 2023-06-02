@@ -35,7 +35,6 @@ namespace LPVL
 
         LPVL_EXPORT QSGGeometry* createLineStripNode(const vector<float>& v, float dx, float dy, float w, float h, float line_width = 1);
         LPVL_EXPORT QSGGeometry* createSimpleGraphNode(const vector<float>& v, float dx, float dy, float w, float h);
-        LPVL_EXPORT QSGGeometry* triangulateVertexTArray(const vector<Vertex>& v, float w, float h);
 
         LPVL_EXPORT QSGFlatColorMaterial* createFlatTransparentMaterial(const QString& col, float alpha = 1);
 

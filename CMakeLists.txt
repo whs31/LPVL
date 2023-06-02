@@ -4,21 +4,19 @@ project(LPVL LANGUAGES CXX)
 
 set(LPVL_COMPILE_TO_STATIC FALSE)
 set(LPVL_TESTS_ENABLED FALSE)
-set(LPVL_REMOVE_QT_RELATED_FUNCTIONS FALSE)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-if(NOT ${LPVL_REMOVE_QT_RELATED_FUNCTIONS})
-    set(CMAKE_AUTOMOC ON)
-    set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
 
-    find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
-    find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS
-        Core
-        Quick
-    )
-endif()
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS
+    Core
+    Quick
+)
+
 
 if(${LPVL_TESTS_ENABLED})
     find_package(GTest)
@@ -54,7 +52,8 @@ set(LPVL_CORE_INCLUDE
 )
 
 set(SRC
-    ${LPVL_CORE} ${LPVL_CORE_INCLUDE}
+    ${LPVL_CORE}
+    ${LPVL_CORE_INCLUDE}
 )
 
 message("Compiling to static: ${LPVL_COMPILE_TO_STATIC}")
@@ -66,12 +65,11 @@ else()
     target_compile_definitions (${PROJECT_NAME} PRIVATE LPVL_LIBRARY)
 endif()
 
-if (NOT ${LPVL_REMOVE_QT_RELATED_FUNCTIONS})
-    target_link_libraries(${PROJECT_NAME} PRIVATE
-        Qt${QT_VERSION_MAJOR}::Core
-        Qt${QT_VERSION_MAJOR}::Quick
-    )
-endif()
+target_link_libraries(${PROJECT_NAME} PRIVATE
+    Qt${QT_VERSION_MAJOR}::Core
+    Qt${QT_VERSION_MAJOR}::Quick
+)
+
 
 if(${LPVL_TESTS_ENABLED})
     set(TESTS

@@ -109,25 +109,5 @@ QSGGeometryNode *createGraphNode(const vector<float> &v, float dx, float dy, flo
     return ret;
 }
 
-
-QSGGeometry *triangulateVertexTArray(const vector<Vertex> &v, float w, float h)
-{
-    auto ret = new QSGGeometry(QSGGeometry::defaultAttributes_TexturedPoint2D(), 0, 0, QSGGeometry::UnsignedIntType);
-    ret->setDrawingMode(QSGGeometry::DrawPoints);
-    ret->setLineWidth(10);
-
-    vector<VertexT> gl;
-    for(size_t i = 0; i < v.size(); ++i)
-    {
-        gl.push_back(VertexT(v[i].x, v[i].y, 1, 1));
-    }
-
-    ret->allocate(gl.size());
-    for(size_t i = 0; i < gl.size(); ++i)
-        ret->vertexDataAsTexturedPoint2D()[i].set(gl[i].x, gl[i].y, gl[i].u, gl[i].v);
-
-    return ret;
-}
-
 } // scenegraph
 } // LPVL

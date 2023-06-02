@@ -56,6 +56,7 @@ namespace LPVL
             Point2D& operator-=(const Point2D& point);
             Point2D& operator*=(float f);
             Point2D& operator/=(float f);
+            Point2D& operator=(const Point2D& other);
 
             friend QDebug operator<<(QDebug d, const Point2D& p);
 

@@ -114,6 +114,16 @@ LPVL::Point2D& LPVL::Point2D::operator/=(float f)
     return *this;
 }
 
+LPVL::Point2D& LPVL::Point2D::operator=(const Point2D& other)
+{
+    if(this == &other)
+        return *this;
+
+    m_x = other.x();
+    m_y = other.y();
+    return *this;
+}
+
 bool LPVL::operator==(const LPVL::Point2D& p1, const LPVL::Point2D& p2)
 {
     bool is_nan = LPVL::isNaN(p1.x()) or LPVL::isNaN(p1.y())
@@ -126,21 +136,21 @@ bool LPVL::operator!=(const LPVL::Point2D& p1, const LPVL::Point2D& p2)
     return not (p1 == p2);
 }
 
-const LPVL::Point2D operator-(const LPVL::Point2D& p1, const LPVL::Point2D& p2)
+LPVL::Point2D operator-(const LPVL::Point2D& p1, const LPVL::Point2D& p2)
 {
     return LPVL::Point2D(p1.x() - p2.x(), p1.y() - p2.y());
 }
 
-const LPVL::Point2D operator+(const LPVL::Point2D& p1, const LPVL::Point2D& p2)
+LPVL::Point2D operator+(const LPVL::Point2D& p1, const LPVL::Point2D& p2)
 {
     return LPVL::Point2D(p1.x() + p2.x(), p1.y() + p2.y());
 }
 
-const LPVL::Point2D operator+(const LPVL::Point2D& p) { return p; }
-const LPVL::Point2D operator-(const LPVL::Point2D& p) { return LPVL::Point2D(-p.x(), -p.y()); }
-const LPVL::Point2D operator*(float f, const LPVL::Point2D& p) { return LPVL::Point2D(p.x() * f, p.y() * f); }
-const LPVL::Point2D operator*(const LPVL::Point2D& p, float f) { return LPVL::Point2D(p.x() * f, p.y() * f); }
-const LPVL::Point2D operator/(const LPVL::Point2D& p, float f) { return LPVL::Point2D(p.x() / f, p.y() / f); }
+LPVL::Point2D operator+(const LPVL::Point2D& p) { return p; }
+LPVL::Point2D operator-(const LPVL::Point2D& p) { return LPVL::Point2D(-p.x(), -p.y()); }
+LPVL::Point2D operator*(float f, const LPVL::Point2D& p) { return LPVL::Point2D(p.x() * f, p.y() * f); }
+LPVL::Point2D operator*(const LPVL::Point2D& p, float f) { return LPVL::Point2D(p.x() * f, p.y() * f); }
+LPVL::Point2D operator/(const LPVL::Point2D& p, float f) { return LPVL::Point2D(p.x() / f, p.y() / f); }
 
 QDebug operator<<(QDebug d, const LPVL::Point2D& p)
 {

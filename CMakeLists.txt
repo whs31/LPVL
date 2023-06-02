@@ -17,7 +17,6 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS
     Quick
 )
 
-
 if(${LPVL_TESTS_ENABLED})
     find_package(GTest)
 endif()
@@ -33,6 +32,7 @@ set(LPVL_CORE
     src/geometry/lpvlglvertex.h
     src/geometry/lpvlglnodegeometry.h src/geometry/lpvlglnodegeometry.c++
     src/geometry/lpvlpoint2d.h src/geometry/lpvlpoint2d.c++
+    src/geometry/lpvlline2d.h src/geometry/lpvlline2d.c++
 
     src/utils/lpvlcrypto.h src/utils/lpvlcrypto.c++
 
@@ -48,6 +48,7 @@ set(LPVL_CORE_INCLUDE
     include/LPVL/Enums
     include/LPVL/GLGeometry
     include/LPVL/Point2D
+    include/LPVL/Line2D
     include/LPVL/MatrixPlot
     include/LPVL/LinePlot
     include/LPVL/RealtimeLinePlot

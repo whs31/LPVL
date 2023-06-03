@@ -215,6 +215,27 @@ void Line2D::translate(float dx, float dy)
 
 Line2D Line2D::translated(float dx, float dy) { return Line2D(m_1 + Point2D(dx, dy), m_2 + Point2D(dx, dy)); }
 
+bool operator==(const Line2D& p1, const Line2D& p2)
+{
+    bool is_nan = not p1.isValid() and not p2.isValid();
+    return is_nan ? false : p1.first() == p2.first() and p1.second() == p2.second();
+}
+
+bool operator!=(const Line2D& p1, const Line2D& p2)
+{
+    return not (p1 == p2);
+}
+
+QDebug operator<<(QDebug d, const Line2D& p)
+{
+    d.nospace() << "Line2D("
+                << p.x1() << ", "
+                << p.y1() << ", "
+                << p.x2() << ", "
+                << p.y2() << ")";
+    return d;
+}
+
 Line2D Line2D::fromOrigin(float radius, float angle) noexcept
 {
     const float angleR = angle * 0.636619772367581343076 / 360.0;

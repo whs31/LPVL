@@ -77,8 +77,8 @@ namespace LPVL
             void translate(float dx, float dy);
             Line2D translated(float dx, float dy);
 
-            bool operator==(const Line2D&) const;
-            bool operator!=(const Line2D&) const;
+            friend bool operator==(const Line2D&, const Line2D&);
+            friend bool operator!=(const Line2D&, const Line2D&);
             friend QDebug operator<<(QDebug d, const Point2D& p);
 
         public:

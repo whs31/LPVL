@@ -19,6 +19,8 @@ namespace LPVL
 {
     LPVL_REGISTER_QML(LinePlot, "LPVLLinePlot", "LPVL.Charts");
 
+    /// @TODO inherit from base chart
+
     LinePlot::LinePlot(QQuickItem* parent)
         : QQuickItem(parent)
     {

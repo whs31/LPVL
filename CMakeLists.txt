@@ -39,6 +39,7 @@ set(LPVL_CORE
 
     src/utils/lpvlcrypto.h src/utils/lpvlcrypto.c++
 
+    src/quick/lpvlchartbase.h src/quick/lpvlchartbase.c++
     src/quick/lpvlmatrixplot.h src/quick/lpvlmatrixplot.c++
     src/quick/lpvllineplot.h src/quick/lpvllineplot.c++
     src/quick/lpvlrealtimelineplot.h src/quick/lpvlrealtimelineplot.c++
@@ -56,6 +57,7 @@ set(LPVL_CORE_INCLUDE
     include/LPVL/Rectangle
     include/LPVL/Polygon
     include/LPVL/Shapes2D
+    include/LPVL/ChartBase
     include/LPVL/MatrixPlot
     include/LPVL/LinePlot
     include/LPVL/RealtimeLinePlot

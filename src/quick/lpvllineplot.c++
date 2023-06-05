@@ -19,10 +19,8 @@ namespace LPVL
 {
     LPVL_REGISTER_QML(LinePlot, "LPVLLinePlot", "LPVL.Charts");
 
-    /// @TODO inherit from base chart
-
     LinePlot::LinePlot(QQuickItem* parent)
-        : QQuickItem(parent)
+        : ChartBase(parent)
     {
         setFlags(ItemHasContents);
     }
@@ -133,30 +131,6 @@ namespace LPVL
         return node;
     }
 
-    QString LinePlot::backgroundColor() const { return m_backgroundColor; }
-    void LinePlot::setBackgroundColor(const QString& o) {
-        if (m_backgroundColor == o)
-            return;
-        m_backgroundColor = o;
-        emit backgroundColorChanged();
-    }
-
-    QString LinePlot::foregroundColor() const { return m_foregroundColor; }
-    void LinePlot::setForegroundColor(const QString& o) {
-        if (m_foregroundColor == o)
-            return;
-        m_foregroundColor = o;
-        emit foregroundColorChanged();
-    }
-
-    QString LinePlot::plottingColor() const { return m_plottingColor; }
-    void LinePlot::setPlottingColor(const QString& o) {
-        if (m_plottingColor == o)
-            return;
-        m_plottingColor = o;
-        emit plottingColorChanged();
-    }
-
     void LinePlot::calculate_bounds(bool skip)
     {
         x_size = v.size();
@@ -166,14 +140,6 @@ namespace LPVL
             y_max = (float)*max;
             y_min = (float)*min;
         }
-    }
-
-    bool LinePlot::drawBackground() const { return m_drawBackground; }
-    void LinePlot::setDrawBackground(bool o) {
-        if (m_drawBackground == o)
-            return;
-        m_drawBackground = o;
-        emit drawBackgroundChanged();
     }
 
     bool LinePlot::drawAxes() const { return m_drawAxes; }

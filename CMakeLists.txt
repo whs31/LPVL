@@ -43,6 +43,7 @@ set(LPVL_CORE
     src/quick/lpvlmatrixplot.h src/quick/lpvlmatrixplot.c++
     src/quick/lpvllineplot.h src/quick/lpvllineplot.c++
     src/quick/lpvlrealtimelineplot.h src/quick/lpvlrealtimelineplot.c++
+    src/quick/lpvlmaterials.h src/quick/lpvlmaterials.c++
 )
 
 set(LPVL_CORE_INCLUDE
@@ -51,6 +52,7 @@ set(LPVL_CORE_INCLUDE
     include/LPVL/Math
     include/LPVL/Enums
     include/LPVL/GLGeometry
+    include/LPVL/SGMaterials
     include/LPVL/Point2D
     include/LPVL/Line2D
     include/LPVL/Triangle

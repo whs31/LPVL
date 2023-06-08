@@ -2,14 +2,10 @@ cmake_minimum_required (VERSION 3.15)
 
 project(LPVL LANGUAGES CXX)
 
-set(LPVL_COMPILE_TO_STATIC FALSE)
 set(LPVL_TESTS_ENABLED FALSE)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS
@@ -19,6 +15,8 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS
 
 if(${LPVL_TESTS_ENABLED})
     find_package(GTest)
+    set(CMAKE_AUTOMOC ON)
+    set(CMAKE_AUTORCC ON)
 endif()
 
 include_directories(src include)
@@ -71,20 +69,20 @@ set(SRC
     ${LPVL_CORE_INCLUDE}
 )
 
-message("Compiling to static: ${LPVL_COMPILE_TO_STATIC}")
-if(${LPVL_COMPILE_TO_STATIC})
+if(${STATIC_COMPILE})
     add_library(${PROJECT_NAME} ${SRC})
     target_compile_definitions (${PROJECT_NAME} PRIVATE LPVL_LIBRARY LPVL_STATIC)
+    message("<${PROJECT_NAME}> Compiling to static.")
 else()
     add_library(${PROJECT_NAME} SHARED ${SRC} )
     target_compile_definitions (${PROJECT_NAME} PRIVATE LPVL_LIBRARY)
+    message("<${PROJECT_NAME}> Compiling to dynamic.")
 endif()
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
     Qt${QT_VERSION_MAJOR}::Core
     Qt${QT_VERSION_MAJOR}::Quick
 )
-
 
 if(${LPVL_TESTS_ENABLED})
     set(TESTS

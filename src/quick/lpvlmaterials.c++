@@ -1,14 +1,5 @@
 #include "lpvlmaterials.h"
 
-int State::compare(const State *other) const
-{
-    if(color.rgba() == other->color.rgba())
-        return 0;
-    if(color.rgba() < other->color.rgba())
-        return -1;
-    return 1;
-}
-
 namespace LPVL
 {
 const char *RadialGradientShader::vertexShader() const

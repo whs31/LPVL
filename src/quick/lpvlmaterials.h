@@ -7,7 +7,13 @@
 struct LPVL_EXPORT State
 {
     QColor color;
-    int compare(const State* other) const;
+    int compare(const State* other) const {
+        if(color.rgba() == other->color.rgba())
+            return 0;
+        if(color.rgba() < other->color.rgba())
+            return -1;
+        return 1;
+    }
 };
 
 namespace LPVL

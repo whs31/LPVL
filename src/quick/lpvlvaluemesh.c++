@@ -18,6 +18,8 @@
 namespace LPVL
 {
 
+LPVL_REGISTER_QML(ValueMesh, "LPVLValueMesh", "LPVL.Charts");
+
 ValueMesh::ValueDiscrete::ValueDiscrete(float x, float y, float value)
     : x(x)
     , y(y)

@@ -7,6 +7,9 @@ set(LPVL_TESTS_ENABLED FALSE)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS
     Core
@@ -15,8 +18,6 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS
 
 if(${LPVL_TESTS_ENABLED})
     find_package(GTest)
-    set(CMAKE_AUTOMOC ON)
-    set(CMAKE_AUTORCC ON)
 endif()
 
 include_directories(src include)
@@ -41,6 +42,7 @@ set(LPVL_CORE
     src/quick/lpvlmatrixplot.h src/quick/lpvlmatrixplot.c++
     src/quick/lpvllineplot.h src/quick/lpvllineplot.c++
     src/quick/lpvlrealtimelineplot.h src/quick/lpvlrealtimelineplot.c++
+    src/quick/lpvlvaluemesh.h src/quick/lpvlvaluemesh.c++
     src/quick/lpvlmaterials.h src/quick/lpvlmaterials.c++
 )
 
@@ -59,6 +61,7 @@ set(LPVL_CORE_INCLUDE
     include/LPVL/Shapes2D
     include/LPVL/ChartBase
     include/LPVL/MatrixPlot
+    include/LPVL/ValueMesh
     include/LPVL/LinePlot
     include/LPVL/RealtimeLinePlot
     include/LPVL/Crypto

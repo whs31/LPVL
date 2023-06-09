@@ -11,13 +11,6 @@ int State::compare(const State *other) const
 
 namespace LPVL
 {
-
-QSGMaterialShader *RadialGradientShader::createShader() { return new RadialGradientShader; }
-QSGSimpleMaterialComparableMaterial<State> *RadialGradientShader::createMaterial()
-{
-    return new QSGSimpleMaterialComparableMaterial<State>(createShader);
-}
-
 const char *RadialGradientShader::vertexShader() const
 {
     return "attribute highp vec4 aVertex;           \n"

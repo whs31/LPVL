@@ -14,17 +14,14 @@ namespace LPVL
 {
     class LPVL_EXPORT RadialGradientShader : public QSGSimpleMaterialShader<State>
     {
-        public:
-            static QSGSimpleMaterialComparableMaterial<State>* createMaterial();
+        QSG_DECLARE_SIMPLE_COMPARABLE_SHADER(RadialGradientShader, State)
 
+        public:
             const char* vertexShader() const override;
             const char* fragmentShader() const override;
             QList<QByteArray> attributes() const override;
             void updateState(const State* state, const State*) override;
             void resolveUniforms() override;
-
-        private:
-            static QSGMaterialShader* createShader();
 
         private:
             int id_color;

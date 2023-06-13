@@ -13,10 +13,12 @@
 #include "lpvlglnodegeometry.h"
 #include "lpvlglvertex.h"
 
+#include <cmath>
 #include <QtGui/QColor>
 #include <QtQuick/QSGGeometry>
 #include <QtQuick/QSGFlatColorMaterial>
 #include <QtQuick/QSGGeometryNode>
+#include <LPVL/Math>
 
 namespace LPVL
 {
@@ -110,4 +112,14 @@ QSGGeometryNode *createGraphNode(const vector<float> &v, float dx, float dy, flo
 }
 
 } // scenegraph
+
+constexpr static const double MAP_SCALE_CONST = 156543.03392;
+
+float internal::mqi_zoom_ratio(double lat, float m_to_px_ratio) noexcept
+{
+    if(not m_to_px_ratio)
+        return LPVL::log(2, MAP_SCALE_CONST * cos(lat * M_PI / 180));
+    return LPVL::log(2, MAP_SCALE_CONST * cos(lat * M_PI / 180) / m_to_px_ratio);
+}
+
 } // LPVL

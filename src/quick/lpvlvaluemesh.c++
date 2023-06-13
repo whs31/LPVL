@@ -78,7 +78,7 @@ void ValueMesh::setData(const vector<ValueMesh::ValueDiscrete>& dt) {
     this->update();
 }
 
-QSGNode *ValueMesh::updatePaintNode(QSGNode* old_node, UpdatePaintNodeData*)
+QSGNode* ValueMesh::updatePaintNode(QSGNode* old_node, UpdatePaintNodeData*)
 {
     QSGGeometry* geometry = nullptr;
     QSGGeometryNode* node = static_cast<QSGGeometryNode*>(old_node);

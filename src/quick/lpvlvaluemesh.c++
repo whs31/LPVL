@@ -43,21 +43,6 @@ ValueMesh::ValueMesh(QQuickItem* parent)
 {
     this->setFlag(ItemHasContents);
     this->updateDeltas();
-
-    //************* TEMP *******************
-    this->setRectSize(QSizeF(.1, .1));
-    this->setData({ValueDiscrete(0, 0, 0),
-                   ValueDiscrete(.1, .1, .1),
-                   ValueDiscrete(.2, .2, .2),
-                   ValueDiscrete(.3, .3, .3),
-                   ValueDiscrete(.4, .4, .4),
-                   ValueDiscrete(.5, .5, .5),
-                   ValueDiscrete(.6, .6, .6),
-                   ValueDiscrete(.7, .7, .7),
-                   ValueDiscrete(.8, .8, .8),
-                   ValueDiscrete(.9, .9, .9),
-    });
-    //**************************************
 }
 
 QSizeF ValueMesh::rectSize() const { return m_rectSize; }

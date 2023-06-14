@@ -2,7 +2,6 @@ cmake_minimum_required (VERSION 3.15)
 
 project(LPVL LANGUAGES CXX)
 
-set(LPVL_COMPILE_TO_STATIC FALSE)
 set(LPVL_TESTS_ENABLED FALSE)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -43,6 +42,8 @@ set(LPVL_CORE
     src/quick/lpvlmatrixplot.h src/quick/lpvlmatrixplot.c++
     src/quick/lpvllineplot.h src/quick/lpvllineplot.c++
     src/quick/lpvlrealtimelineplot.h src/quick/lpvlrealtimelineplot.c++
+    src/quick/lpvlvaluemesh.h src/quick/lpvlvaluemesh.c++
+    src/quick/lpvlmaterials.h src/quick/lpvlmaterials.c++
 )
 
 set(LPVL_CORE_INCLUDE
@@ -51,6 +52,7 @@ set(LPVL_CORE_INCLUDE
     include/LPVL/Math
     include/LPVL/Enums
     include/LPVL/GLGeometry
+    include/LPVL/SGMaterials
     include/LPVL/Point2D
     include/LPVL/Line2D
     include/LPVL/Triangle
@@ -59,6 +61,7 @@ set(LPVL_CORE_INCLUDE
     include/LPVL/Shapes2D
     include/LPVL/ChartBase
     include/LPVL/MatrixPlot
+    include/LPVL/ValueMesh
     include/LPVL/LinePlot
     include/LPVL/RealtimeLinePlot
     include/LPVL/Crypto
@@ -69,20 +72,20 @@ set(SRC
     ${LPVL_CORE_INCLUDE}
 )
 
-message("Compiling to static: ${LPVL_COMPILE_TO_STATIC}")
-if(${LPVL_COMPILE_TO_STATIC})
+if(${STATIC_COMPILE})
     add_library(${PROJECT_NAME} ${SRC})
     target_compile_definitions (${PROJECT_NAME} PRIVATE LPVL_LIBRARY LPVL_STATIC)
+    message("<${PROJECT_NAME}> Compiling to static.")
 else()
     add_library(${PROJECT_NAME} SHARED ${SRC} )
     target_compile_definitions (${PROJECT_NAME} PRIVATE LPVL_LIBRARY)
+    message("<${PROJECT_NAME}> Compiling to dynamic.")
 endif()
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
     Qt${QT_VERSION_MAJOR}::Core
     Qt${QT_VERSION_MAJOR}::Quick
 )
-
 
 if(${LPVL_TESTS_ENABLED})
     set(TESTS

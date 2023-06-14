@@ -34,5 +34,10 @@ namespace LPVL
         LPVL_EXPORT QSGGeometryNode* createBackgroundNode(const QString& col, float w, float h);
         LPVL_EXPORT QSGGeometryNode* createLineStripNode(const vector<float>& v, float dx, float dy, float w, float h, const QString& col, float alpha = 1, float line_width = 1);
         LPVL_EXPORT QSGGeometryNode* createGraphNode(const vector<float>& v, float dx, float dy, float w, float h, const QString& col, float alpha = 1);
-    }
+    } // scenegraph
+
+    namespace internal
+    {
+        LPVL_EXPORT float mqi_zoom_ratio(double lat, float m_to_px_ratio = 1) noexcept;
+    } // internal
 } // LPVL

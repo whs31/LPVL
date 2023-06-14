@@ -11,6 +11,9 @@
 *.dylib
 
 build*
+# for Clion
+.idea
+cmake-build*
 
 # Qt-es
 object_script.*.Release

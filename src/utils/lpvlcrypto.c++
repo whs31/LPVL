@@ -83,3 +83,12 @@ char* LPVL::str_data(const QString& str) noexcept
 {
     return str.toLocal8Bit().data();
 }
+
+uint16_t LPVL::crc16_alt(const char* data, uint16_t size) noexcept
+{
+    const unsigned char* uData = reinterpret_cast<const unsigned char *>(data);
+    quint16 crc=0xffff;
+    while (size--)
+        crc = (crc << 8) ^ CRC16_TABLE[(crc >> 8) ^ *(uData++)];
+    return crc;
+}

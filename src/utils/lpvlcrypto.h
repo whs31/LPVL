@@ -19,6 +19,7 @@ namespace LPVL
 {
     LPVL_EXPORT uint16_t crc16(char* data, int size) noexcept;
     LPVL_EXPORT uint16_t crc16_ccitt(const char* data, int size) noexcept;
+    LPVL_EXPORT uint16_t crc16_alt(const char *data, uint16_t size) noexcept;
     LPVL_EXPORT char* str_data(const QString& str) noexcept;
 
 //    LPVL_EXPORT double geo2meters(double degrees) noexcept;

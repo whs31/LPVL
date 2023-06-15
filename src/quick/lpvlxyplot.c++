@@ -27,6 +27,8 @@ XYPlot::XYPlot(QQuickItem* parent)
     , x_max(0)
     , y_min(0)
     , y_max(0)
+    , dx(0)
+    , dy(0)
 {
     setFlags(ItemHasContents);
 }
@@ -61,12 +63,62 @@ void XYPlot::setFill(bool b) {
 
 QSGNode *XYPlot::updatePaintNode(QSGNode *old_node, UpdatePaintNodeData *)
 {
+    QSGGeometry* geometry = nullptr;
+    QSGGeometryNode* node = static_cast<QSGGeometryNode*>(old_node);
+    if(node == nullptr)
+    {
+        node = new QSGGeometryNode;
 
+        QSGFlatColorMaterial* material = new QSGFlatColorMaterial;
+
+        node->setMaterial(material);
+
+        geometry = new QSGGeometry(QSGGeometry::defaultAttributes_Point2D(), 0, 0, QSGGeometry::UnsignedIntType);
+        geometry->setDrawingMode(QSGGeometry::DrawTriangles);
+        node->setGeometry(geometry);
+        node->setFlags(QSGNode::OwnsGeometry | QSGNode::OwnsMaterial);
+    }
+
+    QSGFlatColorMaterial* material = static_cast<QSGFlatColorMaterial*>(node->material());
+    material->setColor(plottingColor());
+
+    geometry = node->geometry();
+
+    vector<VertexC> gl;
+
+    LPVL_UNIMPLEMENTED
+
+    geometry->allocate(gl.size());
+    for(size_t i = 0; i < gl.size(); i++)
+        geometry->vertexDataAsPoint2D()[i].set(gl.at(i).x, gl.at(i).y);
+
+    node->markDirty(QSGNode::DirtyGeometry);
+    return node;
 }
 
-void XYPlot::calculate_bounds(bool skip)
+void XYPlot::calculate_bounds()
 {
+    x_min = 0;
+    x_max = 0;
+    y_min = 0;
+    y_max = 0;
+    dx = 0;
+    dy = 0;
 
+    for(const auto& p : v)
+    {
+        if(p.x() > x_max)
+            x_max = p.x();
+        if(p.x() < x_min)
+            x_min = p.x();
+        if(p.y() > y_max)
+            y_max = p.y();
+        if(p.y() < y_min)
+            y_min = p.y();
+    }
+
+    dx = width() / abs(x_max - x_min);
+    dy = height() / abs(y_max - y_min);
 }
 
 } // LPVL

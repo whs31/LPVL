@@ -42,12 +42,13 @@ namespace LPVL
             QSGNode* updatePaintNode(QSGNode* old_node, UpdatePaintNodeData*) override;
 
         private:
-            void calculate_bounds(bool skip = false);
+            void calculate_bounds();
 
         private:
             vector<Point2D> v;
             bool m_fill;
 
             float x_max, x_min, y_max, y_min;
+            float dx, dy;
     };
 } // LPVL

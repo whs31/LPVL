@@ -18,7 +18,7 @@
 
 namespace LPVL
 {
-    LPVL_REGISTER_QML(MatrixPlot, "LPVLMatrixPlot", "LPVL.Charts");
+    LPVL_REGISTER_QML(MatrixPlot, "LPVLMatrixPlot", "LPVL.Charts")
 
     MatrixPlot::MatrixPlot(QQuickItem* parent)
         : QQuickItem{parent}

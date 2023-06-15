@@ -43,6 +43,7 @@ set(LPVL_CORE
     src/quick/lpvllineplot.h src/quick/lpvllineplot.c++
     src/quick/lpvlrealtimelineplot.h src/quick/lpvlrealtimelineplot.c++
     src/quick/lpvlvaluemesh.h src/quick/lpvlvaluemesh.c++
+    src/quick/lpvlxyplot.h src/quick/lpvlxyplot.c++
     src/quick/lpvlmaterials.h src/quick/lpvlmaterials.c++
 )
 

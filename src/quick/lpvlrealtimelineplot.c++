@@ -20,7 +20,7 @@
 
 namespace LPVL
 {
-    LPVL_REGISTER_QML(RealtimeLinePlot, "LPVLRealtimeLinePlot", "LPVL.Charts");
+    LPVL_REGISTER_QML(RealtimeLinePlot, "LPVLRealtimeLinePlot", "LPVL.Charts")
 
     RealtimeLinePlot::RealtimeLinePlot(QQuickItem* parent)
         : LinePlot(parent)

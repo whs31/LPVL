@@ -17,7 +17,7 @@
 
 namespace LPVL
 {
-    LPVL_REGISTER_QML(LinePlot, "LPVLLinePlot", "LPVL.Charts");
+    LPVL_REGISTER_QML(LinePlot, "LPVLLinePlot", "LPVL.Charts")
 
     LinePlot::LinePlot(QQuickItem* parent)
         : ChartBase(parent)

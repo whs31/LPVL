@@ -113,6 +113,32 @@ QSGGeometryNode *createGraphNode(const vector<float> &v, float dx, float dy, flo
 
 } // scenegraph
 
+Boundaries calc::boundArray(const vector<Point2D> &vec) noexcept
+{
+    Boundaries ret;
+    for(const auto& p : vec)
+    {
+        if(p.x() > ret.xmax)
+            ret.xmax = p.x();
+        if(p.x() < ret.xmin)
+            ret.xmin = p.x();
+        if(p.y() > ret.ymax)
+            ret.ymax = p.y();
+        if(p.y() < ret.ymin)
+            ret.ymin = p.y();
+    }
+
+    return ret;
+}
+
+CoordDelta calc::deltaBound(float w, float h, const Boundaries &bounds) noexcept
+{
+    CoordDelta ret;
+    ret.dx = w / abs(bounds.xmax - bounds.xmin);
+    ret.dy = h / abs(bounds.ymax - bounds.ymin);
+    return ret;
+}
+
 constexpr static const double MAP_SCALE_CONST = 156543.03392;
 
 float internal::mqi_zoom_ratio(double lat, float m_to_px_ratio) noexcept

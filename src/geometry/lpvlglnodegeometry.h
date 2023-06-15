@@ -14,6 +14,8 @@
 
 #include "LPVL/Global"
 #include "LPVL/Enums"
+#include "LPVL/Point2D"
+#include "lpvlglvertex.h"
 #include <vector>
 
 using std::vector;
@@ -35,6 +37,12 @@ namespace LPVL
         LPVL_EXPORT QSGGeometryNode* createLineStripNode(const vector<float>& v, float dx, float dy, float w, float h, const QString& col, float alpha = 1, float line_width = 1);
         LPVL_EXPORT QSGGeometryNode* createGraphNode(const vector<float>& v, float dx, float dy, float w, float h, const QString& col, float alpha = 1);
     } // scenegraph
+
+    namespace calc
+    {
+        LPVL_EXPORT Boundaries boundArray(const vector<Point2D>& vec) noexcept;
+        LPVL_EXPORT CoordDelta deltaBound(float w, float h, const Boundaries& bounds) noexcept;
+    } // calc
 
     namespace internal
     {

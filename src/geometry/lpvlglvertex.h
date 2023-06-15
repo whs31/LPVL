@@ -39,4 +39,19 @@ namespace LPVL
         float x, y;
         uint8_t r, g, b, a;
     };
+
+    struct LPVL_EXPORT Boundaries
+    {
+        Boundaries() : xmin(0), xmax(0), ymin(0), ymax(0) {}
+        Boundaries(float x_min, float x_max, float y_min, float y_max)
+            : xmin(x_min), xmax(x_max), ymin(y_min), ymax(y_max) {}
+        float xmin, xmax, ymin, ymax;
+    };
+
+    struct LPVL_EXPORT CoordDelta
+    {
+        CoordDelta() : dx(1), dy(1) {}
+        CoordDelta(float dx, float dy) : dx(dx), dy(dy) {}
+        float dx, dy;
+    };
 } // LPVL

@@ -43,6 +43,19 @@ ValueMesh::ValueMesh(QQuickItem* parent)
     qRegisterMetaType<LPVL::ValueMesh::ValueDiscrete>("ValueDiscrete");
     this->setFlags(ItemHasContents | ItemClipsChildrenToShape);
     this->updateDeltas();
+
+    //************* TEMP *******************
+    this->setData({QVariant::fromValue(ValueDiscrete(0, 0, 0)),
+                   QVariant::fromValue(ValueDiscrete(.1, .1, .1)),
+                   QVariant::fromValue(ValueDiscrete(.2, .2, .2)),
+                   QVariant::fromValue(ValueDiscrete(.3, .3, .3)),
+                   QVariant::fromValue(ValueDiscrete(.4, .4, .4)),
+                   QVariant::fromValue(ValueDiscrete(.5, .5, .5)),
+                   QVariant::fromValue(ValueDiscrete(.6, .6, .6)),
+                   QVariant::fromValue(ValueDiscrete(.7, .7, .7)),
+                   QVariant::fromValue(ValueDiscrete(.8, .8, .8)),
+                   QVariant::fromValue(ValueDiscrete(.9, .9, .9)),
+    });
 }
 
 QSizeF ValueMesh::rectSize() const { return m_rectSize; }
@@ -64,6 +77,7 @@ QVariantList ValueMesh::data() const {
 void ValueMesh::setData(const QVariantList& dt) {
     m_data.clear();
     for(const auto& val : dt)
+        m_data.push_back(val.value<ValueDiscrete>());
     emit dataChanged();
 
     this->update();

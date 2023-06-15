@@ -14,6 +14,7 @@
 
 #include "LPVL/Global"
 #include <QtCore/QSizeF>
+#include <QtCore/QVariantList>
 #include <QtQuick/QQuickItem>
 #include <vector>
 
@@ -36,7 +37,7 @@ namespace LPVL
         private:
             Q_OBJECT
             Q_PROPERTY(QSizeF rectSize READ rectSize WRITE setRectSize NOTIFY rectSizeChanged)
-            Q_PROPERTY(vector<ValueDiscrete> data READ data WRITE setData NOTIFY dataChanged)
+            Q_PROPERTY(QVariantList data READ data WRITE setData NOTIFY dataChanged)
             Q_PROPERTY(QString minColor READ minColor WRITE setMinColor NOTIFY minColorChanged)
             Q_PROPERTY(QString maxColor READ maxColor WRITE setMaxColor NOTIFY maxColorChanged)
 
@@ -44,7 +45,7 @@ namespace LPVL
             ValueMesh(QQuickItem* parent = nullptr);
 
             QSizeF rectSize() const; void setRectSize(const QSizeF&);
-            vector<ValueDiscrete> data() const; void setData(const vector<ValueDiscrete>&);
+            QVariantList data() const; void setData(const QVariantList&);
 
             QString minColor() const; void setMinColor(const QString&);
             QString maxColor() const; void setMaxColor(const QString&);
@@ -77,3 +78,6 @@ namespace LPVL
             QColor max;
     };
 } // LPVL
+
+#include <QtCore/QMetaType>
+Q_DECLARE_METATYPE(LPVL::ValueMesh::ValueDiscrete)

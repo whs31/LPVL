@@ -32,7 +32,6 @@ ValueMesh::ValueDiscrete::ValueDiscrete()
     , value(0)
 {}
 
-
 ValueMesh::ValueMesh(QQuickItem* parent)
     : QQuickItem(parent)
     , m_rectSize(QSizeF())
@@ -41,7 +40,8 @@ ValueMesh::ValueMesh(QQuickItem* parent)
     , min(m_minColor)
     , max(m_maxColor)
 {
-    this->setFlag(ItemHasContents);
+    qRegisterMetaType<LPVL::ValueMesh::ValueDiscrete>("ValueDiscrete");
+    this->setFlags(ItemHasContents | ItemClipsChildrenToShape);
     this->updateDeltas();
 }
 
@@ -55,9 +55,15 @@ void ValueMesh::setRectSize(const QSizeF& sz) {
     this->update();
 }
 
-vector<ValueMesh::ValueDiscrete> ValueMesh::data() const { return m_data; }
-void ValueMesh::setData(const vector<ValueMesh::ValueDiscrete>& dt) {
-    m_data = dt;
+QVariantList ValueMesh::data() const {
+    QVariantList ret;
+    for(const auto& val : m_data)
+        ret.push_back(QVariant::fromValue(val));
+    return ret;
+}
+void ValueMesh::setData(const QVariantList& dt) {
+    m_data.clear();
+    for(const auto& val : dt)
     emit dataChanged();
 
     this->update();
@@ -85,11 +91,11 @@ QSGNode* ValueMesh::updatePaintNode(QSGNode* old_node, UpdatePaintNodeData*)
 
     geometry = node->geometry();
 
-    if(data().empty() or rectSize().isEmpty())
+    if(m_data.empty() or rectSize().isEmpty())
         return node;
 
     vector<VertexC> gl;
-    for(const auto& discrete : data())
+    for(const auto& discrete : m_data)
     {
         uint8_t r = static_cast<uint8_t>(min.red() + delta.dr * discrete.value);
         uint8_t g = static_cast<uint8_t>(min.green() + delta.dg * discrete.value);
@@ -133,8 +139,6 @@ void ValueMesh::updateDeltas() noexcept
     delta.dr = max.red() - min.red();
     delta.dg = max.green() - min.green();
     delta.db = max.blue() - min.blue();
-
-    qDebug() << delta.dr << delta.dg << delta.db;
 
     this->update();
 }

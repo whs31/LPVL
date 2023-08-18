@@ -1,0 +1,7 @@
+<map id="Иерархия классов. Графический вид." name="Иерархия классов. Графический вид.">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,79,34"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="127,5,223,34"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="94,17,126,17,126,22,94,22"/>
+<area shape="rect" id="Node000002" href="$da/d9a/classLPVL_1_1ScenegraphObject.html" title="Базовый класс для объектов Qt Quick Scenegraph." alt="" coords="271,5,411,34"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="238,17,271,17,271,22,238,22"/>
+</map>

@@ -1,0 +1,184 @@
+<!-- HTML header for doxygen 1.9.6-->
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+  <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=11" />
+  <meta name="generator" content="Doxygen 1.9.7" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LPVL: Исходный файл scenegraphobject.c++</title>
+  <link href="../../tabs.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="../../jquery.js"></script>
+  <script type="text/javascript" src="../../dynsections.js"></script>
+  <script type="text/javascript" src="../../doxygen-awesome-darkmode-toggle.js"></script>
+  <script type="text/javascript" src="../../doxygen-awesome-fragment-copy-button.js"></script>
+  <script type="text/javascript" src="../../doxygen-awesome-paragraph-link.js"></script>
+  <script type="text/javascript" src="../../doxygen-awesome-interactive-toc.js"></script>
+  <script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+  </script>
+  <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+  <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+  <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+  <link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr id="projectrow">
+              <td id="projectlogo"><img alt="Logo" src="../../logo.svg" /></td>
+              <td id="projectalign">
+                <div id="projectname">LPVL<span
+                    id="projectnumber">&#160;1.0.0</span>
+                </div>
+                <div id="projectbrief">Библиотека для построения графиков, визуализации и работы с QML Scenegraph с аппаратным ускорением</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part --><!-- Создано системой Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('da/d43/scenegraphobject_8c_09_09_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">scenegraphobject.c++</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ---------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * LPVL - Linear Algebra, Plotting and Visualisation Library</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * Copyright (C) 2023 whs31.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * This program is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * it under the terms of the GNU Affero Public License version 3 as</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * published by the Free Software Foundation.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * http://www.gnu.org/licenses.</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * github.com/whs31/lpvl</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * ---------------------------------------------------------------------- */</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;scenegraphobject.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QtQuick/QSGNode&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d7/da2/namespaceLPVL.html">LPVL</a></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="../../da/d9a/classLPVL_1_1ScenegraphObject.html#a6d09a173a74592b16710df201d320281">   38</a></span>  <a class="code hl_function" href="../../da/d9a/classLPVL_1_1ScenegraphObject.html#a6d09a173a74592b16710df201d320281">ScenegraphObject::ScenegraphObject</a>(QQuickItem* parent)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    : QQuickItem(parent)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    , m_require_recolor(false)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    this-&gt;setFlag(ItemHasContents);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  QSGNode* ScenegraphObject::updatePaintNode(QSGNode* old_node, QQuickItem::UpdatePaintNodeData* x)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    (void)x;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">if</span>(old_node == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>      old_node = <a class="code hl_function" href="../../da/d9a/classLPVL_1_1ScenegraphObject.html#a7dbfb6539beba38d54f78e180ba68a38">createNode</a>();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>      <a class="code hl_function" href="../../da/d9a/classLPVL_1_1ScenegraphObject.html#a1ad6a611add39ec90c77eed034a64e89">setupChildNodes</a>(old_node);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="../../da/d9a/classLPVL_1_1ScenegraphObject.html#a4d5814882bfd30285653ee00bdc9123a">recolor</a>())</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      <a class="code hl_function" href="../../da/d9a/classLPVL_1_1ScenegraphObject.html#a49e574fde99895492ef3d5e6d4882244">setupNodeColors</a>(old_node);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_function" href="../../da/d9a/classLPVL_1_1ScenegraphObject.html#a507e737bf8500e63a560df660bcdc369">drawCall</a>(old_node);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; old_node-&gt;childCount(); i++)</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      old_node-&gt;childAtIndex(i)-&gt;markDirty(<a class="code hl_function" href="../../da/d9a/classLPVL_1_1ScenegraphObject.html#a4d5814882bfd30285653ee00bdc9123a">recolor</a>() ? (QSGNode::DirtyGeometry |  QSGNode::DirtyMaterial) : QSGNode::DirtyGeometry);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    old_node-&gt;markDirty(QSGNode::DirtyGeometry | QSGNode::DirtyMaterial);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">return</span> old_node;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="../../da/d9a/classLPVL_1_1ScenegraphObject.html#a7dbfb6539beba38d54f78e180ba68a38">   86</a></span>  QSGNode* <a class="code hl_function" href="../../da/d9a/classLPVL_1_1ScenegraphObject.html#a7dbfb6539beba38d54f78e180ba68a38">ScenegraphObject::createNode</a>() { <span class="keywordflow">return</span> <span class="keyword">new</span> QSGNode; }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="../../da/d9a/classLPVL_1_1ScenegraphObject.html#a4d5814882bfd30285653ee00bdc9123a">  135</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../da/d9a/classLPVL_1_1ScenegraphObject.html#a4d5814882bfd30285653ee00bdc9123a">ScenegraphObject::recolor</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_require_recolor; }</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="../../da/d9a/classLPVL_1_1ScenegraphObject.html#af38c265b61302a02cf3dbfb905874012">  141</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../da/d9a/classLPVL_1_1ScenegraphObject.html#af38c265b61302a02cf3dbfb905874012">ScenegraphObject::requireRecolor</a>() { m_require_recolor = <span class="keyword">true</span>; this-&gt;update(); }</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="../../da/d9a/classLPVL_1_1ScenegraphObject.html#a38dd7d7108d19a77388b22b496d07045">  146</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../da/d9a/classLPVL_1_1ScenegraphObject.html#a38dd7d7108d19a77388b22b496d07045">ScenegraphObject::fulfillRecolor</a>() { m_require_recolor = <span class="keyword">false</span>; }</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>} <span class="comment">// LPVL</span></div>
+<div class="ttc" id="aclassLPVL_1_1ScenegraphObject_html_a1ad6a611add39ec90c77eed034a64e89"><div class="ttname"><a href="../../da/d9a/classLPVL_1_1ScenegraphObject.html#a1ad6a611add39ec90c77eed034a64e89">LPVL::ScenegraphObject::setupChildNodes</a></div><div class="ttdeci">virtual void setupChildNodes(QSGNode *node)=0</div><div class="ttdoc">Создает дочерние ноды.</div></div>
+<div class="ttc" id="aclassLPVL_1_1ScenegraphObject_html_a38dd7d7108d19a77388b22b496d07045"><div class="ttname"><a href="../../da/d9a/classLPVL_1_1ScenegraphObject.html#a38dd7d7108d19a77388b22b496d07045">LPVL::ScenegraphObject::fulfillRecolor</a></div><div class="ttdeci">void fulfillRecolor()</div><div class="ttdoc">Сбрасывает флаг на обновление материалов.</div><div class="ttdef"><b>Definition</b> <a href="../../da/d43/scenegraphobject_8c_09_09_source.html#l00146">scenegraphobject.c++:146</a></div></div>
+<div class="ttc" id="aclassLPVL_1_1ScenegraphObject_html_a49e574fde99895492ef3d5e6d4882244"><div class="ttname"><a href="../../da/d9a/classLPVL_1_1ScenegraphObject.html#a49e574fde99895492ef3d5e6d4882244">LPVL::ScenegraphObject::setupNodeColors</a></div><div class="ttdeci">virtual void setupNodeColors(QSGNode *node)=0</div><div class="ttdoc">Задает цвета для материалов дочерних нод.</div></div>
+<div class="ttc" id="aclassLPVL_1_1ScenegraphObject_html_a4d5814882bfd30285653ee00bdc9123a"><div class="ttname"><a href="../../da/d9a/classLPVL_1_1ScenegraphObject.html#a4d5814882bfd30285653ee00bdc9123a">LPVL::ScenegraphObject::recolor</a></div><div class="ttdeci">bool recolor() const</div><div class="ttdoc">Возвращает состояние флага на обновление материалов нод.</div><div class="ttdef"><b>Definition</b> <a href="../../da/d43/scenegraphobject_8c_09_09_source.html#l00135">scenegraphobject.c++:135</a></div></div>
+<div class="ttc" id="aclassLPVL_1_1ScenegraphObject_html_a507e737bf8500e63a560df660bcdc369"><div class="ttname"><a href="../../da/d9a/classLPVL_1_1ScenegraphObject.html#a507e737bf8500e63a560df660bcdc369">LPVL::ScenegraphObject::drawCall</a></div><div class="ttdeci">virtual void drawCall(QSGNode *node)=0</div><div class="ttdoc">Основная функция цикла отрисовки.</div></div>
+<div class="ttc" id="aclassLPVL_1_1ScenegraphObject_html_a6d09a173a74592b16710df201d320281"><div class="ttname"><a href="../../da/d9a/classLPVL_1_1ScenegraphObject.html#a6d09a173a74592b16710df201d320281">LPVL::ScenegraphObject::ScenegraphObject</a></div><div class="ttdeci">ScenegraphObject(QQuickItem *parent=nullptr)</div><div class="ttdoc">Конструктор по умолчанию.</div><div class="ttdef"><b>Definition</b> <a href="../../da/d43/scenegraphobject_8c_09_09_source.html#l00038">scenegraphobject.c++:38</a></div></div>
+<div class="ttc" id="aclassLPVL_1_1ScenegraphObject_html_a7dbfb6539beba38d54f78e180ba68a38"><div class="ttname"><a href="../../da/d9a/classLPVL_1_1ScenegraphObject.html#a7dbfb6539beba38d54f78e180ba68a38">LPVL::ScenegraphObject::createNode</a></div><div class="ttdeci">virtual QSGNode * createNode()</div><div class="ttdoc">Создает корневую ноду.</div><div class="ttdef"><b>Definition</b> <a href="../../da/d43/scenegraphobject_8c_09_09_source.html#l00086">scenegraphobject.c++:86</a></div></div>
+<div class="ttc" id="aclassLPVL_1_1ScenegraphObject_html_af38c265b61302a02cf3dbfb905874012"><div class="ttname"><a href="../../da/d9a/classLPVL_1_1ScenegraphObject.html#af38c265b61302a02cf3dbfb905874012">LPVL::ScenegraphObject::requireRecolor</a></div><div class="ttdeci">void requireRecolor()</div><div class="ttdoc">Запрашивает обновление материалов в следующем цикле.</div><div class="ttdef"><b>Definition</b> <a href="../../da/d43/scenegraphobject_8c_09_09_source.html#l00141">scenegraphobject.c++:141</a></div></div>
+<div class="ttc" id="anamespaceLPVL_html"><div class="ttname"><a href="../../d7/da2/namespaceLPVL.html">LPVL</a></div><div class="ttdoc">Пространство имен библиотеки LPVL.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d48/basicpalette_8c_09_09_source.html#l00023">basicpalette.c++:24</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_fcb2a60e1810a51543a3cc3a113d0956.html">c++</a></li><li class="navelem"><a class="el" href="../../dir_79f9f206d562452bb5749a9daa86f603.html">scenegraph</a></li><li class="navelem"><b>scenegraphobject.c++</b></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
+  </ul>
+</div>
+</body>
+</html>

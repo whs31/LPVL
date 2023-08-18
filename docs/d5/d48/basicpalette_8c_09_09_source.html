@@ -1,0 +1,182 @@
+<!-- HTML header for doxygen 1.9.6-->
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+  <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=11" />
+  <meta name="generator" content="Doxygen 1.9.7" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LPVL: Исходный файл basicpalette.c++</title>
+  <link href="../../tabs.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="../../jquery.js"></script>
+  <script type="text/javascript" src="../../dynsections.js"></script>
+  <script type="text/javascript" src="../../doxygen-awesome-darkmode-toggle.js"></script>
+  <script type="text/javascript" src="../../doxygen-awesome-fragment-copy-button.js"></script>
+  <script type="text/javascript" src="../../doxygen-awesome-paragraph-link.js"></script>
+  <script type="text/javascript" src="../../doxygen-awesome-interactive-toc.js"></script>
+  <script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+  </script>
+  <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+  <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+  <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+  <link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr id="projectrow">
+              <td id="projectlogo"><img alt="Logo" src="../../logo.svg" /></td>
+              <td id="projectalign">
+                <div id="projectname">LPVL<span
+                    id="projectnumber">&#160;1.0.0</span>
+                </div>
+                <div id="projectbrief">Библиотека для построения графиков, визуализации и работы с QML Scenegraph с аппаратным ускорением</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part --><!-- Создано системой Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('d5/d48/basicpalette_8c_09_09_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">basicpalette.c++</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ---------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * LPVL - Linear Algebra, Plotting and Visualisation Library</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * Copyright (C) 2023 whs31.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * This program is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * it under the terms of the GNU Affero Public License version 3 as</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * published by the Free Software Foundation.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * http://www.gnu.org/licenses.</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * github.com/whs31/lpvl</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * ---------------------------------------------------------------------- */</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;basicpalette.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../d7/da2/namespaceLPVL.html">   23</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d7/da2/namespaceLPVL.html">LPVL</a></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  BasicPalette::BasicPalette()</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    : m_background(<span class="stringliteral">&quot;black&quot;</span>)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    , m_foreground(<span class="stringliteral">&quot;white&quot;</span>)</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    , m_overlay(<span class="stringliteral">&quot;gray&quot;</span>)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    , m_overlay2(<span class="stringliteral">&quot;#777777&quot;</span>)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    , m_accent(<span class="stringliteral">&quot;green&quot;</span>)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    , m_warn(<span class="stringliteral">&quot;yellow&quot;</span>)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    , m_error(<span class="stringliteral">&quot;red&quot;</span>)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    , m_info(<span class="stringliteral">&quot;blue&quot;</span>)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  {}</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  QColor <a class="code hl_property" href="../../d4/dae/classLPVL_1_1BasicPalette.html#a9239939b64679abad9d0ab88ba448083">BasicPalette::background</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_background; }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keywordtype">void</span> BasicPalette::setBackground(<span class="keyword">const</span> QColor&amp; x) { m_background = x; }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  QColor <a class="code hl_property" href="../../d4/dae/classLPVL_1_1BasicPalette.html#a809fe72b46248bfe89c32642ce770d4b">BasicPalette::foreground</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_foreground; }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keywordtype">void</span> BasicPalette::setForeground(<span class="keyword">const</span> QColor&amp; x) { m_foreground = x; }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  QColor <a class="code hl_property" href="../../d4/dae/classLPVL_1_1BasicPalette.html#ad18735e21b9100cb298ea247556c1868">BasicPalette::overlay</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_overlay; }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keywordtype">void</span> BasicPalette::setOverlay(<span class="keyword">const</span> QColor&amp; x) { m_overlay = x; }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  QColor <a class="code hl_property" href="../../d4/dae/classLPVL_1_1BasicPalette.html#a255c7ca270dbe87b88fc834907240585">BasicPalette::overlay2</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_overlay2; }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keywordtype">void</span> BasicPalette::setOverlay2(<span class="keyword">const</span> QColor&amp; x) { m_overlay2 = x; }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  QColor <a class="code hl_property" href="../../d4/dae/classLPVL_1_1BasicPalette.html#a823551d69959b41d351d24c4be9c8e08">BasicPalette::accent</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_accent; }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keywordtype">void</span> BasicPalette::setAccent(<span class="keyword">const</span> QColor&amp; x) { m_accent = x; }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  QColor <a class="code hl_property" href="../../d4/dae/classLPVL_1_1BasicPalette.html#a1454e1f770b337ecbb62cd2028662081">BasicPalette::warn</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_warn; }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="keywordtype">void</span> BasicPalette::setWarn(<span class="keyword">const</span> QColor&amp; x) { m_warn = x; }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  QColor <a class="code hl_property" href="../../d4/dae/classLPVL_1_1BasicPalette.html#af10dacfa214e2575bb2e0ee407c242e0">BasicPalette::error</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_error; }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keywordtype">void</span> BasicPalette::setError(<span class="keyword">const</span> QColor&amp; x) { m_error = x; }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  QColor <a class="code hl_property" href="../../d4/dae/classLPVL_1_1BasicPalette.html#a7b16a542aaeea764362f9dc2249ae63c">BasicPalette::info</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_info; }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <span class="keywordtype">void</span> BasicPalette::setInfo(<span class="keyword">const</span> QColor&amp; x) { m_info = x; }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>}</div>
+<div class="ttc" id="aclassLPVL_1_1BasicPalette_html_a1454e1f770b337ecbb62cd2028662081"><div class="ttname"><a href="../../d4/dae/classLPVL_1_1BasicPalette.html#a1454e1f770b337ecbb62cd2028662081">LPVL::BasicPalette::warn</a></div><div class="ttdeci">QColor warn</div><div class="ttdoc">Цвет предупреждений.</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/basicpalette_8h_source.html#l00001">basicpalette.h:27</a></div></div>
+<div class="ttc" id="aclassLPVL_1_1BasicPalette_html_a255c7ca270dbe87b88fc834907240585"><div class="ttname"><a href="../../d4/dae/classLPVL_1_1BasicPalette.html#a255c7ca270dbe87b88fc834907240585">LPVL::BasicPalette::overlay2</a></div><div class="ttdeci">QColor overlay2</div><div class="ttdoc">Цвет, промежуточный между background и foreground.</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/basicpalette_8h_source.html#l00001">basicpalette.h:25</a></div></div>
+<div class="ttc" id="aclassLPVL_1_1BasicPalette_html_a7b16a542aaeea764362f9dc2249ae63c"><div class="ttname"><a href="../../d4/dae/classLPVL_1_1BasicPalette.html#a7b16a542aaeea764362f9dc2249ae63c">LPVL::BasicPalette::info</a></div><div class="ttdeci">QColor info</div><div class="ttdoc">Цвет оповещений.</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/basicpalette_8h_source.html#l00001">basicpalette.h:29</a></div></div>
+<div class="ttc" id="aclassLPVL_1_1BasicPalette_html_a809fe72b46248bfe89c32642ce770d4b"><div class="ttname"><a href="../../d4/dae/classLPVL_1_1BasicPalette.html#a809fe72b46248bfe89c32642ce770d4b">LPVL::BasicPalette::foreground</a></div><div class="ttdeci">QColor foreground</div><div class="ttdoc">Цвет, контрастный к фону.</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/basicpalette_8h_source.html#l00001">basicpalette.h:23</a></div></div>
+<div class="ttc" id="aclassLPVL_1_1BasicPalette_html_a823551d69959b41d351d24c4be9c8e08"><div class="ttname"><a href="../../d4/dae/classLPVL_1_1BasicPalette.html#a823551d69959b41d351d24c4be9c8e08">LPVL::BasicPalette::accent</a></div><div class="ttdeci">QColor accent</div><div class="ttdoc">Основной акцентный цвет.</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/basicpalette_8h_source.html#l00001">basicpalette.h:26</a></div></div>
+<div class="ttc" id="aclassLPVL_1_1BasicPalette_html_a9239939b64679abad9d0ab88ba448083"><div class="ttname"><a href="../../d4/dae/classLPVL_1_1BasicPalette.html#a9239939b64679abad9d0ab88ba448083">LPVL::BasicPalette::background</a></div><div class="ttdeci">QColor background</div><div class="ttdoc">Цвет фона.</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/basicpalette_8h_source.html#l00001">basicpalette.h:22</a></div></div>
+<div class="ttc" id="aclassLPVL_1_1BasicPalette_html_ad18735e21b9100cb298ea247556c1868"><div class="ttname"><a href="../../d4/dae/classLPVL_1_1BasicPalette.html#ad18735e21b9100cb298ea247556c1868">LPVL::BasicPalette::overlay</a></div><div class="ttdeci">QColor overlay</div><div class="ttdoc">Цвет, промежуточный между background и foreground.</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/basicpalette_8h_source.html#l00001">basicpalette.h:24</a></div></div>
+<div class="ttc" id="aclassLPVL_1_1BasicPalette_html_af10dacfa214e2575bb2e0ee407c242e0"><div class="ttname"><a href="../../d4/dae/classLPVL_1_1BasicPalette.html#af10dacfa214e2575bb2e0ee407c242e0">LPVL::BasicPalette::error</a></div><div class="ttdeci">QColor error</div><div class="ttdoc">Цвет ошибок.</div><div class="ttdef"><b>Definition</b> <a href="../../d8/df3/basicpalette_8h_source.html#l00001">basicpalette.h:28</a></div></div>
+<div class="ttc" id="anamespaceLPVL_html"><div class="ttname"><a href="../../d7/da2/namespaceLPVL.html">LPVL</a></div><div class="ttdoc">Пространство имен библиотеки LPVL.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d48/basicpalette_8c_09_09_source.html#l00023">basicpalette.c++:24</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_fcb2a60e1810a51543a3cc3a113d0956.html">c++</a></li><li class="navelem"><a class="el" href="../../dir_5231e71815281d5fbea39f01eadeabca.html">gadgets</a></li><li class="navelem"><b>basicpalette.c++</b></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
+  </ul>
+</div>
+</body>
+</html>

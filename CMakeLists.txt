@@ -2,6 +2,10 @@ cmake_minimum_required (VERSION 3.15)
 
 project(LPVL LANGUAGES CXX)
 
+if(TARGET ${PROJECT_NAME})
+  return()
+endif()
+
 option(USE_QT_POSITIONING_LIBRARY
   "Link against Qt5::Positioning and expose Geo-related features"
   OFF

@@ -23,17 +23,17 @@ namespace LPVL
 
 namespace LPVL
 {
-  Point2D::Point2D() noexcept
+  inline Point2D::Point2D() noexcept
     : Point1D()
     , m_y(0)
   {}
 
-  Point2D::Point2D(float x, float y) noexcept
+  inline Point2D::Point2D(float x, float y) noexcept
     : Point1D(x)
     , m_y(y)
   {}
 
-  float Point2D::y() const noexcept { return m_y; }
-  void Point2D::setY(float q) noexcept { m_y = q; }
-  float& Point2D::refY() noexcept { return m_y; }
+  inline float Point2D::y() const noexcept { return m_y; }
+  inline void Point2D::setY(float q) noexcept { m_y = q; }
+  inline float& Point2D::refY() noexcept { return m_y; }
 } // LPVL

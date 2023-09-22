@@ -12,4 +12,7 @@ namespace LPVL
 
   double NaN() noexcept;
   bool isNaN(double other) noexcept;
+
+  constexpr bool compare(double x, double y) { return (std::abs(x - y) * 1000000000000. <= std::min(std::abs(x), std::abs(y))); }
+  constexpr bool compare(float x, float y) { return (std::abs(x - y) * 100000.f <= std::min(std::abs(x), std::abs(y))); }
 }

@@ -11,13 +11,22 @@ namespace LPVL
 {
   namespace Numbers
   {
-    template<class T = double> inline constexpr T pi = enable_if_floating<T>(3.141592653589793238462643383279502884L);
+    template<class T> inline constexpr T pi = enable_if_floating<T>(3.141592653589793238462643383279502884L);
+    template<class T> inline constexpr T euler = enable_if_floating<T>(2.71828182845904523536028747135266249L);
+    template<class T> inline constexpr T sqrt2 = enable_if_floating<T>(1.41421356237309504880168872420969807L);
+    template<class T> inline constexpr T sqrt3 = enable_if_floating<T>(1.73205080756887729352744634150587236L);
+    template<class T> inline constexpr T sqrt5 = enable_if_floating<T>(2.23606797749978969640917366873127623L);
+    template<class T> inline constexpr T phi = enable_if_floating<T>(1.61803398874989484820458683436563811L);
+
+    constexpr inline double π = pi<double>;
+    constexpr inline double e = euler<double>;
+    constexpr inline double φ = phi<double>;
   }
 
   double log(double base, double value) noexcept { return (std::log(value) / std::log(base)); }
 
-  double deg2rad(double degrees) noexcept { return degrees * (M_PI / 180); }
-  double rad2deg(double radians) noexcept { return radians * (180 / M_PI); }
+  double deg2rad(double degrees) noexcept { return degrees * (Numbers::pi<double> / 180); }
+  double rad2deg(double radians) noexcept { return radians * (180 / Numbers::pi<double>); }
 
   double NaN() noexcept;
   bool isNaN(double other) noexcept;

@@ -11,7 +11,7 @@ namespace LPVL
 {
   namespace Numbers
   {
-    template<class T> inline constexpr T pi = enable_if_floating<T>(3.141592653589793238462643383279502884L);
+    template<class T = double> inline constexpr T pi = enable_if_floating<T>(3.141592653589793238462643383279502884L);
   }
 
   double log(double base, double value) noexcept { return (std::log(value) / std::log(base)); }

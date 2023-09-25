@@ -21,7 +21,6 @@
 using std::u16string_view;
 
 #define scope_info LPVL::Internal::parseScopeInfo(Q_FUNC_INFO)
-#define lpvl_separator "."
 
 namespace LPVL::Logging
 {
@@ -42,6 +41,7 @@ namespace LPVL::Internal
   inline const char* parseScopeInfo(const char* x) noexcept;
 } // LPVL::Internal
 
+#define lpvl_separator "."
 namespace LPVL::Logging
 {
   inline bool setLoggingPattern() noexcept

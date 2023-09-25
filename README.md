@@ -7,3 +7,6 @@
 
 #### [Документация к проекту](https://whs31.github.io/LPVL/)
 
+### Используемые библиотеки:
+
+-  ![](https://avatars.githubusercontent.com/u/6557263?s=16&v=4)[**CTRE**](https://github.com/catppuccin/palette) - *constexpr*-инструменты для работы с регулярными выражениями.
